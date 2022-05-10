@@ -18,6 +18,7 @@ class CalendarControllerProvider<T> extends InheritedWidget {
     required Widget child,
   }) : super(key: key, child: child);
 
+
   static CalendarControllerProvider<T> of<T>(BuildContext context) {
     final result = context
         .dependOnInheritedWidgetOfExactType<CalendarControllerProvider<T>>();
