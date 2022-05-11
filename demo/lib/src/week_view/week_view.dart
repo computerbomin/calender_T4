@@ -418,7 +418,8 @@ class WeekViewState<T> extends State<WeekView<T>> {
       child: Padding(
         padding: const EdgeInsets.only(right: 7.0),
         child: Text(
-          "${((date.hour - 1) % 12) + 1} ${date.hour ~/ 12 == 0 ? "am" : "pm"}",
+          ((date.hour ~/ 12 == 0) ? "오전 ${date.hour}" : "오후 ${((date.hour - 1) % 12) + 1}"),
+//          "${((date.hour - 1) % 12) + 1} ${date.hour ~/ 12 == 0 ? "오전" : "오후"}",
           textAlign: TextAlign.right,
           style: TextStyle(
             fontSize: 15.0,

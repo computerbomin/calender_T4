@@ -4,6 +4,8 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icon.dart';
+import 'package:line_icons/line_icons.dart';
 
 import '../constants.dart';
 import '../typedefs.dart';
@@ -67,11 +69,14 @@ class CalendarPageHeader extends StatelessWidget {
             highlightColor: Colors.transparent,
             padding:
                 const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            icon: Icon(LineIcons.arrowLeft),
+            /*
             icon: Icon(
               Icons.chevron_left,
               size: 30,
               color: iconColor,
             ),
+             */
           ),
           Expanded(
             child: InkWell(
@@ -90,11 +95,14 @@ class CalendarPageHeader extends StatelessWidget {
             highlightColor: Colors.transparent,
             padding:
                 const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            icon: Icon(LineIcons.arrowRight),
+            /*
             icon: Icon(
               Icons.chevron_right,
               size: 30,
               color: iconColor,
             ),
+             */
           ),
         ],
       ),

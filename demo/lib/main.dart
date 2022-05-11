@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:calendar_view/calendar_view.dart';
+import 'package:calendar_view/src/event_controller.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:flutter/src/material/tab_controller.dart';
 import 'package:line_icons/line_icons.dart';
-import 'calendar_view.dart';
 
+import 'calendar_view.dart';
+import './src/event_controller.dart';
+import './src/create_view/creat_view/create_event_page.dart';
+import 'extension.dart';
+import './src/model/event.dart';
 
 void main() => runApp(const MyApp());
 
@@ -35,7 +40,7 @@ class MyStatelessWidget extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('T4 Scheduler'),
+          title: const Text('T4 Demo Scheduler'),
           bottom: const TabBar(
             tabs: <Widget>[
               Tab(
@@ -63,7 +68,19 @@ class MyStatelessWidget extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+          floatingActionButton: FloatingActionButton(
+            child: Icon(LineIcons.plus),
+            elevation: 8,
+              onPressed: () async {
+                final event =
+                await context.pushRoute<CalendarEventData<Event>>(CreateEventPage(
+                  withDuration: true,
+                ));
+                if (event == null) return;
+                CalendarControllerProvider.of<dynamic>(context).controller.add(event);
+              },
+          )
+        ),
+      );
   }
 }

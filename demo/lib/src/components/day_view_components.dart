@@ -133,7 +133,7 @@ class DayPageHeader extends CalendarPageHeader {
           dateStringBuilder: DayPageHeader._dayStringBuilder,
         );
   static String _dayStringBuilder(DateTime date, {DateTime? secondaryDate}) =>
-      "${date.day} - ${date.month} - ${date.year}";
+      "${date.year}년 ${date.month}월 ${date.day}일";
 }
 
 class DefaultTimeLineMark extends StatelessWidget {
@@ -157,8 +157,9 @@ class DefaultTimeLineMark extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(right: 7.0),
         child: Text(
-          "${((date.hour - 1) % 12) + 1} ${date.hour ~/ 12 == 0 ? "am" : "pm"}",
-          textAlign: TextAlign.right,
+        ((date.hour ~/ 12 == 0) ? "오전 ${date.hour}" : "오후 ${((date.hour - 1) % 12) + 1}"),
+          //"${((date.hour - 1) % 12) + 1} ${date.hour ~/ 12 == 0 ? "AM" : "PM"}",
+          textAlign: TextAlign.left,
           style: markingStyle ??
               TextStyle(
                 fontSize: 15.0,

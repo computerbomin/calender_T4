@@ -25,7 +25,7 @@ class WeekPageHeader extends CalendarPageHeader {
           dateStringBuilder: WeekPageHeader._weekStringBuilder,
         );
   static String _weekStringBuilder(DateTime date, {DateTime? secondaryDate}) =>
-      "${date.day} / ${date.month} / ${date.year} to "
-      "${secondaryDate != null ? "${secondaryDate.day} / "
-          "${secondaryDate.month} / ${secondaryDate.year}" : ""}";
+      "${date.month}월  ${date.day}일 ~ "
+      "${secondaryDate != null ? "${secondaryDate.day}일 "
+          : ""}";
 }

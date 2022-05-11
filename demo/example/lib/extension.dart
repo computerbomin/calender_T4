@@ -26,21 +26,21 @@ extension DateUtils on DateTime {
   String get weekdayToFullString {
     switch (weekday) {
       case DateTime.monday:
-        return "Monday";
+        return "월요일";
       case DateTime.tuesday:
-        return "Tuesday";
+        return "화요일";
       case DateTime.wednesday:
-        return "Wednesday";
+        return "수요일";
       case DateTime.thursday:
-        return "Thursday";
+        return "목요일";
       case DateTime.friday:
-        return "Friday";
+        return "금요일";
       case DateTime.saturday:
-        return "Saturday";
+        return "토요일";
       case DateTime.sunday:
-        return "Sunday";
+        return "일요일";
       default:
-        return "Error";
+        return "에러";
     }
   }
 
